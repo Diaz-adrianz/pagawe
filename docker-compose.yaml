@@ -1,0 +1,32 @@
+version: '3'
+services:
+  mongodb:
+    image: 'mongo'
+    volumes:
+      - data:/data/db
+
+  server:
+    build: ./server
+    ports:
+      - '5000:5000'
+    volumes:
+      - logs:/app/logs
+      - ./backend:/app
+      - /app/node_modules
+    depends_on:
+      - mongodb
+
+  client:
+    build: ./client
+    ports:
+      - '5173:5173'
+    volumes:
+      - ./client/src:/app/src
+    stdin_open: true
+    tty: true
+    depends_on:
+      - server
+
+volumes:
+  data:
+  logs:
