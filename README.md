@@ -14,10 +14,22 @@ memengaruhi kinerja bisnis perusahaan. Pegawai Sehat, Bisnis Pun Sehat!
 
 ### Eksekusi
 
-Run server, pada terminal folder server jalankan perintah berikut:
+Install dependensi
+
+```bash
+npm install
+```
+
+Run server, pada terminal folder `/server` jalankan perintah berikut:
 
 ```bash
 node app
+```
+
+Run client, pada terminal folder `/client` jalankan perintah berikut:
+
+```bash
+npm run dev
 ```
 
 ### Halaman
