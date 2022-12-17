@@ -16,7 +16,7 @@ function FormUser() {
 	const [userId, setUserId] = useState('');
 	const [nama, setNama] = useState('');
 	const [email, setEmail] = useState('');
-	const [role, setRole] = useState('');
+	const [role, setRole] = useState('user');
 	const [password, setPassword] = useState('');
 	const [pekerjaan, setPekerjaan] = useState('');
 	const [departemen, setDepartemen] = useState('');
@@ -43,7 +43,7 @@ function FormUser() {
 		}
 	}, []);
 
-	const cekAuth = async (navigate) => {
+	const cekAuth = async () => {
 		try {
 			const res = await axios.get('http://localhost:5000/uid');
 
@@ -81,9 +81,9 @@ function FormUser() {
 				setAlertMode(error.response.data.status);
 				setAlertMsg(error.response.data.pesan);
 
-				setTimeout(() => {
-					navigate('/formuser/new');
-				}, 1500);
+				// setTimeout(() => {
+				// 	navigate('/formuser/new');
+				// }, 1500);
 			}
 		}
 	};
