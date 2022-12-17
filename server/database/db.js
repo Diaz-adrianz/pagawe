@@ -9,7 +9,7 @@ mongoose.set('strictQuery', false);
 
 export const connectDB = async () => {
 	try {
-		const res = await mongoose.connect(dockering, {
+		const res = await mongoose.connect(lokal, {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 		});
